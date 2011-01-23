@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+	<circle id="shape" r="30" cy="32" cx="32" stroke-width="2" stroke="#000000"
+		fill="#00ff00" />
+	<text xml:space="preserve" text-anchor="middle" font-family="Monospace"
+		font-size="36" id="label" y="44" x="32" stroke-width="0"
+		stroke="#000000" fill="#000000">0</text>
+</svg>
