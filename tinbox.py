@@ -42,15 +42,11 @@ class ToDoTray():
 
     def __init__(self, command):
         self.command = command # XXX: rename?
+        self.statusIcon = gtk.StatusIcon()
 
         tasks = self.get_tasks()
-        if len(tasks) > 9:
-            icon = gtk.STOCK_JUSTIFY_FILL
-        else:
-            icon = gtk.STOCK_EDIT
+        self.update_icon(tasks)
 
-        self.statusIcon = gtk.StatusIcon()
-        self.statusIcon.set_from_stock(icon)
         self.statusIcon.set_visible(True)
         self.statusIcon.set_tooltip('Hello World')
 
@@ -77,8 +73,11 @@ class ToDoTray():
                 data.popup(None, None, gtk.status_icon_position_menu,
                         3, time, self.statusIcon)
 
-    def update_icon(self):
-        self.statusIcon.set_from_stock(gtk.STOCK_JUSTIFY_FILL)
+    def update_icon(self, tasks=None): # XXX: should also update menu items
+        tasks = tasks or self.get_tasks()
+        count = len(tasks)
+        icon = 'svg/n.svg' if count > 9 else 'svg/%s.svg' % count
+        self.statusIcon.set_from_file(icon)
         return True
 
     def get_tasks(self):
