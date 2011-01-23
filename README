@@ -1,0 +1,8 @@
+tinbox
+todotxt tasks inbox
+http://github.com/FND/tinbox
+
+provides a tray indicator for current high-priority tasks
+
+Usage:
+  tinbox.py [--script "/path/to/todo.sh"]
